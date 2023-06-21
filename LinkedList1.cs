@@ -16,7 +16,7 @@ namespace LinkedList
             if (head == null)
             {
                 head = newnode;
-                Console.WriteLine("{0} new Node inserted into the LinkedList", data);
+                //Console.WriteLine("{0} new Node inserted into LinkedList", data);
             }
             else
             {
@@ -27,7 +27,7 @@ namespace LinkedList
                 }
                 temp.next = newnode;
             }
-            Console.WriteLine("{0} new Node inserted into the LinkedList", newnode.data);
+            Console.WriteLine("{0} new Node inserted into LinkedList", newnode.data);
         }
 
         public void AddList(int data)
@@ -36,13 +36,46 @@ namespace LinkedList
             Node newnode = new Node(data);
             newnode.next = head;
             head = newnode;
-            Console.WriteLine("{0} new Node inserted into the LinkedList", newnode.data);
+            Console.WriteLine("{0} new Node inserted into LinkedList", newnode.data);
         }
 
         public void Append(int data)
         {
             AddLast(data);
         }
+
+        public void InsertBetween(int data, int position)
+        {
+            Node newNode = new Node(data);
+            newNode.data = data;
+            newNode.next = null;
+
+            if (position < 1)
+            {
+                Console.WriteLine("Position sholud be greater");
+            }
+            else if (position == 1)
+            {
+                newNode.next = this.head;
+                head = newNode;
+            }
+            else
+            {
+                {
+                    Node temp = new Node(data);
+                    temp = this.head;
+                    while (position > 2)
+                    {
+                        temp = temp.next;
+                        position--;
+                    }
+                    newNode.next = temp.next;
+                    temp.next = newNode;
+                }
+            }
+
+        }
+
 
         public void Display()
         {
