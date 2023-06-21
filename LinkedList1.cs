@@ -10,7 +10,7 @@ namespace LinkedList
     public class LinkedList1
     {
         public Node head;
-        public void AddList(int data)
+        public void AddLast(int data)
         {
             Node newnode = new Node(data);
             if (head == null)
@@ -28,6 +28,14 @@ namespace LinkedList
                 temp.next = newnode;
             }
             Console.WriteLine("{0} new Node inserted into the LinkedList", newnode.data);
+        }
+
+        public void AddFirst(int data)
+        {
+            Node newnode = new Node(data);
+            newnode.next = head;
+            head = newnode;
+            Console.WriteLine("{0} new Node inserted into LinkedList", newnode.data);
         }
 
         public void Display()
