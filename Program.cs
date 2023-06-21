@@ -6,5 +6,5 @@ linkedList.AddLast(56);
 linkedList.AddLast(30);
 linkedList.AddLast(70);
 linkedList.Display();
-linkedList.DeleteFirst();
+linkedList.DeleteLast();
 linkedList.Display();
