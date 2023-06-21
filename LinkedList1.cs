@@ -30,12 +30,18 @@ namespace LinkedList
             Console.WriteLine("{0} new Node inserted into the LinkedList", newnode.data);
         }
 
-        public void AddFirst(int data)
+        public void AddList(int data)
+
         {
             Node newnode = new Node(data);
             newnode.next = head;
             head = newnode;
-            Console.WriteLine("{0} new Node inserted into LinkedList", newnode.data);
+            Console.WriteLine("{0} new Node inserted into the LinkedList", newnode.data);
+        }
+
+        public void Append(int data)
+        {
+            AddLast(data);
         }
 
         public void Display()
